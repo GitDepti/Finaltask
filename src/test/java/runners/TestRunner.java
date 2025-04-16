@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 
 	@CucumberOptions(
-			features ="src//test//resources//features//",
+			features ="src//test//resources//features//create.feature",
 	        glue = {"stepdefinitions"},
 	        dryRun =false,
 	        monochrome=true,
