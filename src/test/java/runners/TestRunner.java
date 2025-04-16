@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 		//features=".//src//test//resources/Features//ArticleNegative.feature",
 		//features=".//src//test//resources/Features//Article.feature",
 		features=".//src//test//resources/Features//create.feature",
-		glue="StepDefinitions",
+		glue="stepdefinitions",
 				monochrome=true,
 			    dryRun=false,
 		plugin= {"pretty",

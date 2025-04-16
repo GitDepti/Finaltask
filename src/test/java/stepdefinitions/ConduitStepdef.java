@@ -53,7 +53,7 @@ public class ConduitStepdef {
 	}
 	@When("User provides {string} and {string}")
 	public void user_provides_and(String string, String string2) {
-		logincred.Enterdetials("deepthiraoappana@gmail.com", "Conduit12345");
+		logincred.Enterdetials("prasanthreddydodda@gmail.com", "Prasanth@7569");
 		logincred.loginclick();
 	}
 	@Then("user should be on home page")
