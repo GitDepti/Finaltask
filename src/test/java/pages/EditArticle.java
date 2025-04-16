@@ -18,6 +18,10 @@ WebElement btnPublishArticle;
 @FindBy(xpath="//button[text()='Delete Article']")
 WebElement btnDeleteArticle;
 
+@FindBy(xpath="(//a[text()='Delete Article'])[1]")
+WebElement deleteAtricle;
+
+
 private WebDriver driver;
 public EditArticle(WebDriver driver) {
 	this.driver=driver;
@@ -25,5 +29,6 @@ public EditArticle(WebDriver driver) {
 }
 
 public void deleteArticle() {
-
-}}
+deleteAtricle.click();
+}
+}

@@ -3,16 +3,20 @@ package runners;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
+@CucumberOptions(
+		
+		//features=".//src//test//resources/Features//ArticleNegative.feature",
+		//features=".//src//test//resources/Features//Article.feature",
+		features=".//src//test//resources/Features//create.feature",
+		glue="StepDefinitions",
+				monochrome=true,
+			    dryRun=false,
+		plugin= {"pretty",
+				"html:target/reports/htmlreports.html",}
+		
+				
+		)
 
-	@CucumberOptions(
-			features ="src//test//resources//features//create.feature",
-	        glue = {"stepdefinitions"},
-	        dryRun =false,
-	        monochrome=true,
-			plugin = { "pretty",
-					"html:target/Reports/HtmlReport.html",
-					
-			})
-	public class TestRunner extends AbstractTestNGCucumberTests {
+public class TestRunner extends AbstractTestNGCucumberTests{
 
 }
