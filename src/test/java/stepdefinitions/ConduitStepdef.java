@@ -2,11 +2,14 @@ package stepdefinitions;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import base.TestBase;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -23,11 +26,16 @@ public class ConduitStepdef {
 
 	@Given("User is on Login page to conduit")
 	public void user_is_on_login_page_to_conduit() throws IOException{
-		TestBase.openUrl(Utils.getConfigProperties("url"));
+		TestBase.openUrl("https://conduit-realworld-example-app.fly.dev/");
 	}
 @Given("User should be on New Article page")
-public void user_should_be_on_new_article_page() {
-    art.userClickOnCreateArticle();
+public void user_should_be_on_new_article_page(DataTable userData) {
+	 List<Map<String,String>> data = userData.asMaps();
+	 String strTitle = data.get(0).get(0);
+	 String strDesc = data.get(0).get(1);
+	 String strCont = data.get(0).get(2);
+	 String strTag = data.get(0).get(3);
+	createarticletest.NewArticle(strTitle,strDesc,strCont,strTag);
 }
 @When("User enters  Article details")
 public void user_enters_article_details(io.cucumber.datatable.DataTable dataTable) {
@@ -45,18 +53,18 @@ public void article_will_be_created() {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
-@Given("Article details page will be displayed")
-public void article_details_page_will_be_displayed() {
-   global.verifyArticleDetails();
-}
-@When("User delete article")
-public void user_delete_article() {
-   edit.deleteArticle();
-}
-@Then("article will be deleted")
-public void article_will_be_deleted() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
+//@Given("Article details page will be displayed")
+//public void article_details_page_will_be_displayed() {
+//   global.verifyArticleDetails();
+//}
+//@When("User delete article")
+//public void user_delete_article() {
+//   edit.deleteArticle();
+//}
+//@Then("article will be deleted")
+//public void article_will_be_deleted() {
+//    // Write code here that turns the phrase above into concrete actions
+//    throw new io.cucumber.java.PendingException();
+//}
 
 }
